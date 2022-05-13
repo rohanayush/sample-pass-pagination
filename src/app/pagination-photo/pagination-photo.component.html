@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="photo">
+         <h1>Photo {{ inde +1 }}</h1>
+    </div>
+    <div class="page">
+           <button  (click)="previous()"  [disabled]="inde === 0" [ngStyle]="{'background':inde === 0?'lightblue':''}" >Previous</button> 
+            <ul *ngFor="let o of len.slice(interval,interval+3);let i=index">
+                <li><button class="pagination" [ngStyle]="{'background':i+interval===inde?'green':''}" (click)="showImage(i)">
+                 <!-- i+1 === index -->
+                    {{o}}
+                </button>
+             </ul>
+           <button  style="margin-left:1.9rem;" (click)="next()" [disabled]="inde === 9" [ngStyle]="{'background':inde === 9?'lightblue':''}">Next</button>
+    </div>
+ 
+ </div>
